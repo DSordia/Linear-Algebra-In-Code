@@ -1,0 +1,23 @@
+{% extends 'laic_app/base.html' %}
+
+{% block content %}
+    <h1 id="title">Linear Algebra In Code</h1>
+    <h2>Gilbert Strang's MIT 18.06 Linear Algebra Lecture Series - In Code!</h2>
+    <p>This web application was built to put the concepts presented by Professor Gilbert Strang
+        in the MIT 18.06 Spring 2005 Linear Algebra lecture series into code.
+        This will help one see the concepts presented in another way and demonstrate the power of Python's NumPy and SymPy libraries.</p>
+    <p>Each lecture page consists of the lecture video from YouTube, the key ideas from the lecture, and code
+        showing the concepts applied in the Python programming language.</p>
+
+    <div class="container" style="margin-top: 30px">
+        <div class="row justify-content-center">
+            {% for lecture in lectures %}
+            <div class="col-xs-2">
+                <a class="lecturebtn" href="{{lecture.1}}">{{lecture.0}}</a>
+            </div>
+            {% endfor %}
+            <div class="col-xs-2 hidden">
+                <a class="lecturebtn" href="#"></a>
+            </div>
+    </div>
+{% endblock content %}

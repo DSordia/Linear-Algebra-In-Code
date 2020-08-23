@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'laic_app/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script type="text/javascript" src="http://ajblk.github.io/SyntaxHighlightGenerator-v3.0/scripts/sh-v3.0-min.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://ajblk.github.io/SyntaxHighlightGenerator-v3.0/styles/shCoreRDark.css"/>
+        <title>Linear Algebra In Code - {{title}}</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="nav-item" href="/">Home</a>
+        <span id="divider">|</span>
+        <div class="dropdown">
+            <div id="lectures">Lectures <svg id="down" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="24" height="24"
+                viewBox="0 0 172 172"
+                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g id="original-icon" fill="#ffffff"><path d="M35.83333,64.5l50.16667,64.5l50.16667,-64.5z"></path></g></g></svg></div>
+            <div class="dropdown-content">
+                {% for lecture in lectures %}
+                    <a href="{{lecture.1}}">{{lecture.0}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    {% block buttons %}{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script type="text/javascript">SyntaxHighlighter.initialize();</script>
+</body>
+</html>

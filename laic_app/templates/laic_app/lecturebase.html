@@ -1,0 +1,39 @@
+{% extends 'laic_app/base.html' %}
+
+{% block content %}
+
+    <h1>{{title}}</h1>
+    <div id="video">
+        {% block video %}{% endblock %}
+    </div>
+    {% if title != 'Lecture 13 - Review 1' and title != 'Lecture 24b - Review 2' and title != 'Lecture 32 - Review 3' and title != 'Lecture 34 - Final Review' %}
+    <h3>Key Ideas:</h3>
+    <div class="listWrapper">
+        <ul>
+            {% block keyIdeas %}{% endblock %}
+        </ul>
+    </div>
+    <h3 id="inCode">In Code:</h3>
+    <div class="listWrapper">
+        <ul>
+            {% block inCode %}{% endblock %}
+        </ul>
+    </div>
+    <div id="code">
+        {% block code %}{% endblock %}
+    </div>
+    {% endif %}
+    
+{% endblock content %}
+
+{% block buttons %}
+
+{% if prev %}
+    <a id="prev" class="btn" href="{{prevURL}}">{{prev}}</a>
+{% endif %}
+
+{% if next %}
+    <a class="btn" href="{{nextURL}}">{{next}}</a>
+{% endif %}
+
+{% endblock %}
