@@ -71,9 +71,22 @@ p {
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 410px;
     text-align: left;
+    max-height: 470px;
+    overflow-y: scroll;
     z-index: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .dropdown-content {
+        min-width: 190px;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .dropdown-content {
+        min-width: 300px;
+    }
 }
 
 .dropdown-content a {
@@ -84,6 +97,10 @@ p {
     font-size: 0.9rem;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
     transition: 0.1s;
+}
+
+#first {
+    margin-top: 23px;
 }
   
 .dropdown-content a:hover {

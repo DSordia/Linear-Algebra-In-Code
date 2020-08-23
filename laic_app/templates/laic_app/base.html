@@ -19,10 +19,15 @@
             <div id="lectures">Lectures <svg id="down" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                 width="24" height="24"
                 viewBox="0 0 172 172"
-                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g id="original-icon" fill="#ffffff"><path d="M35.83333,64.5l50.16667,64.5l50.16667,-64.5z"></path></g></g></svg></div>
+                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g id="original-icon" fill="#ffffff"><path d="M35.83333,64.5l50.16667,64.5l50.16667,-64.5z"></path></g></g></svg>
+            </div>
             <div class="dropdown-content">
                 {% for lecture in lectures %}
-                    <a href="{{lecture.1}}">{{lecture.0}}</a>
+                    {% if lecture.0 == "Lecture 0 - Intro" %}
+                        <a href="{{lecture.1}}" id="first">{{lecture.0}}</a>
+                    {% else %}
+                        <a href="{{lecture.1}}">{{lecture.0}}</a>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
