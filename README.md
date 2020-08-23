@@ -7,4 +7,4 @@ Technologies Used:
 HTML, CSS, Python, Django, NumPy/SymPy, Bootstrap, Heroku
 
 Features:
-HTML template inheritance, styled, responsive, scalable, elegant code solutions
+HTML template inheritance, Styled, Responsive, Scalable, Elegant code solutions
